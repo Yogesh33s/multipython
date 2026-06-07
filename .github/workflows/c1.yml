@@ -5,14 +5,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-    matrix:
-      python-version:[3.9,3.10,3.11,3.12]
+      matrix:
+        python-version:[3.9,3.10,3.11,3.12]
     steps:
     - uses: action/checkout@v4
 
     - name: Python Setup
       uses: action/setup-python@v4
       with:
-        pythonversion: ${{matrix.python-version}}
+        python-version: ${{matrix.python-version}}
     - name: Verify Python Version
       run: python --version
